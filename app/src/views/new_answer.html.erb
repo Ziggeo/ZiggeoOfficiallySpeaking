@@ -1,0 +1,46 @@
+<%- include begin.html.erb %>
+<div style="padding-top:100px" class="container">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="well">
+				<form class="form-horizontal" method="POST" action="/answer/<%- submission.id %>" id="form">
+					<fieldset>
+						<legend>
+							Re: <%- submission.title -%> by <%-submission.question_author %> (<%- submission.votes %> Votes)
+						</legend>
+						<div class="form-group">
+							<label for="answer_author" class="col-lg-2 control-label">Your Name</label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="answer_author" placeholder="Your Name" name="answer_author">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-lg-2 control-label">Question Video</label>
+							<div class="col-lg-10">
+								<ziggeo ziggeo-video="<%- submission.question_video %>" ziggeo-width=400 ziggeo-height=300 ziggeo-popup></ziggeo>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="answer_video" class="col-lg-2 control-label">Your Video</label>
+							<div class="col-lg-10">
+								<input type="hidden" name="answer_video" id="answer_video" />
+								<ziggeo ziggeo-form_accept="#form" ziggeo-width=400 ziggeo-height=300></ziggeo>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-lg-10 col-lg-offset-2">
+								<input type="submit" class="btn btn-primary" value="Submit" />
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	ZiggeoApi.Events.on("submitted", function (data) {
+		$("#answer_video").val(data.video.token);
+	});
+</script>
+<%- include end.html.erb %>

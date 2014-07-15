@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="<%- BetaJS.Locales.get('app.shared.title') %>">
+		<link rel="stylesheet" href="//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
+		<script src="//assets.ziggeo.com/js/ziggeo-jquery-json2-betajs-player.min.js"></script>
+		<script>ZiggeoApi.token = "<%- App.Config.ziggeo_token %>";</script>
+	    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	    
+	    <link href="http://bootswatch.com/spacelab/bootstrap.min.css" rel="stylesheet" type="text/css">
+	    <!--
+		<link rel="stylesheet" href="/assets/css/styles.css" />
+		-->
+		<title>
+			<%- BetaJS.Locales.get('app.shared.title') %> <%- typeof title == "string" ? (" - " + title) : "" %>
+		</title>
+	</head>
+	<body>
+	<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand" style="font-weight:bold; color: red"><%- BetaJS.Locales.get('app.shared.title') %></a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+		<div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/submit">Ask a question</a>
+            </li>
+           </ul>
+           <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">View as <%- BetaJS.Locales.get('app.shared.asker') %></a></li>
+            <li><a href="/answer" >View as <%- BetaJS.Locales.get('app.shared.answerer') %></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>		

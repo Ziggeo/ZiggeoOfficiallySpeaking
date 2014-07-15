@@ -1,0 +1,46 @@
+<%- include begin.html.erb %>
+<div style="padding-top:100px" class="container">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="well">
+				<form class="form-horizontal" method="POST" action="/submit" id="form">
+					<fieldset>
+						<legend>
+							New Question
+						</legend>
+						<div class="form-group">
+							<label for="question_author" class="col-lg-2 control-label">Your Name</label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="question_author" placeholder="Your Name" name="question_author">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="title" class="col-lg-2 control-label">Topic</label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="title" placeholder="Topic" name="title">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="question_video" class="col-lg-2 control-label">Your Video</label>
+							<div class="col-lg-10">
+								<input type="hidden" id="question_video" name="question_video">
+								<ziggeo ziggeo-form_accept="#form" ziggeo-width=400 ziggeo-height=300></ziggeo>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-lg-10 col-lg-offset-2">
+								<input type="submit" class="btn btn-primary" value="Submit" />
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+    ZiggeoApi.Events.on("submitted", function(data) {
+        $("#question_video").val(data.video.token);
+    }); 
+</script>
+<%- include end.html.erb %>

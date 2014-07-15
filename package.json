@@ -1,0 +1,30 @@
+{
+  "name": "ziggeobigapps",
+  "description": "ZiggeoBigApps",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-newer": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-text-replace": "latest"
+  },
+  "dependencies": {
+    "express": "latest",
+    "cookie-parser": "latest",
+    "morgan": "latest",
+    "body-parser": "latest",
+    "mongodb": "latest",
+    "mongo": "latest",
+    "fibers": "latest",
+    "ejs": "latest",
+    "sendgrid": "latest",
+	"bcrypt-nodejs": "git://github.com/shaneGirish/bcrypt-nodejs.git"
+  },
+  "engines": {
+    "node": "latest",
+    "npm": "latest"
+  }  
+}
